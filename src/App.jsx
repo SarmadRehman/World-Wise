@@ -9,12 +9,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage />}></Route>
+        <Route index element={<Homepage />}></Route>
         <Route path="product" element={<Product />}></Route>
         <Route path="pricing" element={<Pricing />}></Route>
         <Route path="login" element={<Login />}></Route>
         {/* for nested-route we used <Outlet /> to display where we have to define */}
         <Route path="app" element={<AppLayout />}>
+          <Route index element={<p>list</p>} />
           <Route path="cities" element={<p>List of cities</p>}></Route>
           <Route path="countries" element={<p>countries</p>}></Route>
           <Route path="form" element={<p>form</p>}></Route>
