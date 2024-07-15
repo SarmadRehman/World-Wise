@@ -51,6 +51,7 @@ function App() {
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
           ></Route>
+          {/* For using Params for capturing Parameters over cities route  */}
           <Route path="cities/:id" element={<City />}></Route>
           <Route
             path="countries"
