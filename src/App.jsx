@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import PageNotFound from "./pages/PageNotFound";
 import Pricing from "./pages/Pricing";
@@ -44,10 +44,8 @@ function App() {
         <Route path="login" element={<Login />}></Route>
         {/* for nested-route we used <Outlet /> to display where we have to define */}
         <Route path="app" element={<AppLayout />}>
-          <Route
-            index
-            element={<CityList cities={cities} isLoading={isLoading} />}
-          />
+          {/* Nested Routes */}
+          <Route index element={<Navigate replace to="cities" />} />
           <Route
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
